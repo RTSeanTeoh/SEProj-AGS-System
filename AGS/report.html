@@ -32,6 +32,14 @@
   <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  
+  
+  <style>
+  .table a
+{
+    display:block;
+    text-decoration:none;
+}</style>
 </head>
 
 <body class="">
@@ -176,131 +184,148 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card card-plain">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title mt-0"> Table on Plain Background</h4>
-                  <p class="card-category"> Here is a subtitle for this table</p>
+                <div class="card-header card-header-warning">
+                  <h4 class="card-title mt-0"> Report Overview</h4>
+                  <p class="card-category"> The report of the historical data</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover">
-                      <thead class="">
+                      <thead class="text-warning">
                         <tr><th>
-                          ID
+                          Date
                         </th>
                         <th>
-                          Name
+                          Weather (avg)
                         </th>
                         <th>
-                          Country
+                          Humidity (avg)
                         </th>
                         <th>
-                          City
+                          Light (avg)
                         </th>
                         <th>
-                          Salary
+                          Report Generated Date
                         </th>
                       </tr></thead>
                       <tbody>
-                        <tr>
+                        <tr class='clickable-row' data-href='./report1.php'>
                           <td>
-                            1
+                            22/11/2019
                           </td>
                           <td>
-                            Dakota Rice
+                            30
                           </td>
                           <td>
-                            Niger
+                            70
                           </td>
                           <td>
-                            Oud-Turnhout
+                            8000
                           </td>
                           <td>
-                            $36,738
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            2
-                          </td>
-                          <td>
-                            Minerva Hooper
-                          </td>
-                          <td>
-                            Curaçao
-                          </td>
-                          <td>
-                            Sinaai-Waas
-                          </td>
-                          <td>
-                            $23,789
+                            22/11/2019 23:45
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            3
+                            23/11/2019
                           </td>
                           <td>
-                            Sage Rodriguez
+                            26
                           </td>
                           <td>
-                            Netherlands
+                            55
                           </td>
                           <td>
-                            Baileux
+                            9351
                           </td>
                           <td>
-                            $56,142
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            4
-                          </td>
-                          <td>
-                            Philip Chaney
-                          </td>
-                          <td>
-                            Korea, South
-                          </td>
-                          <td>
-                            Overland Park
-                          </td>
-                          <td>
-                            $38,735
+                            23/11/2019 23:45
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            5
+                            24/11/2019
                           </td>
                           <td>
-                            Doris Greene
+                            29
                           </td>
                           <td>
-                            Malawi
+                            64
                           </td>
                           <td>
-                            Feldkirchen in Kärnten
+                            9346
                           </td>
                           <td>
-                            $63,542
+                            24/11/2019 21:55
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            6
+                            25/11/2019
                           </td>
                           <td>
-                            Mason Porter
+                            28
                           </td>
                           <td>
-                            Chile
+                            55
                           </td>
                           <td>
-                            Gloucester
+                            7488
                           </td>
                           <td>
-                            $78,615
+                            25/11/2019 22:56
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            26/11/2019
+                          </td>
+                          <td>
+                            33
+                          </td>
+                          <td>
+                            75
+                          </td>
+                          <td>
+                            12341
+                          </td>
+                          <td>
+                            26/11/2019 23:11
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            27/11/2019
+                          </td>
+                          <td>
+                            29
+                          </td>
+                          <td>
+                            67
+                          </td>
+                          <td>
+                            4896
+                          </td>
+                          <td>
+                            27/11/2019 22:33
+                          </td>
+                        </tr>
+						<tr>
+                          <td>
+                            28/11/2019
+                          </td>
+                          <td>
+                            25
+                          </td>
+                          <td>
+                            65
+                          </td>
+                          <td>
+                            5500
+                          </td>
+                          <td>
+                            28/11/2019 23:22
                           </td>
                         </tr>
                       </tbody>
@@ -580,6 +605,11 @@
         });
       });
     });
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+});
   </script>
 </body>
 

@@ -32,6 +32,79 @@
   <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  
+  <script>
+  function validate(){
+   msgWindow=window.open("","displayWindow","height=150,width=400");
+   msgWindow.document.write("<HEAD><TITLE>Change Password</TITLE></HEAD>")
+   msgWindow.document.write("<BODY bgcolor='#eee'><FORM formpwd><table class='table'>");
+   msgWindow.document.write("<tr><td>Your password:</td><td><input type=password size=20></td></tr>");
+   msgWindow.document.write("<tr><td COLSPAN=2 ALIGN=CENTER><input type=button onclick='window.promt()' value=' OK '>&nbsp;&nbsp;<input type=button value=' Cancel '></td></tr></table></form>");
+
+   }
+  </script>
+  
+  <style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #26c6da;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #26c6da;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+  
+  </style>
 </head>
 
 <body class="">
@@ -55,7 +128,7 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item ">
             <a class="nav-link" href="./user.html">
               <i class="material-icons">person</i>
               <p>User Profile</p>
@@ -79,7 +152,7 @@
               <p>Report</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active ">
             <a class="nav-link" href="./usersetting.html">
               <i class="material-icons">settings_applications</i>
               <p>User Setting</p>
@@ -174,110 +247,138 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title">Edit Profile</h4>
-                  <p class="card-category">Complete your profile</p>
+            <div class="col-md-12">
+              <div class="card card-plain">
+                <div class="card-header card-header-info">
+                  <h4 class="card-title mt-0"> Privacy Setting</h4>
+                  <p class="card-category"> Edit your account privacy setting</p>
                 </div>
                 <div class="card-body">
-                  <form>
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Company (disabled)</label>
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Username (disabled)</label>
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Email address</label>
-                          <input type="email" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Fist Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Last Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Adress</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">City</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Country</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Postal Code</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label>About Me</label>
-                          <div class="form-group">
-                            <label class="bmd-label-floating"> Say something about yourself...</label>
-                            <textarea class="form-control" rows="5"></textarea>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-					<div class="col-md-4" style="margin-left: auto; margin-right: auto;">
-						<div class="card card-profile">
-							<div class="card-avatar">
-								<a href="#">
-								<img class="img" src="../assets/img/faces/frog.jpg" />
-								</a>
-							</div>
-							<div class="card-body">
-								<h6 class="card-category text-gray">Upload your profile pic</h6>
-								
-								<a href="#" class="btn btn-primary btn-round">Upload</a>
-							</div>
-						</div>
-					</div>
-                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
-                    <div class="clearfix"></div>
-                  </form>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <tbody>
+                        <tr>
+                          <td>
+                            Change Password
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+						    <form name="myForm" onsubmit="return validate()" method="post">
+                            <button type="submit" class="btn btn-info pull-right">Edit</button>
+							</form>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Save your login information
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                            <label class="switch pull-right">
+							<input type="checkbox" checked>
+							<span class="slider round"></span>
+							</label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Use two-factor authentication
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                           
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            <label class="switch pull-right">
+							<input type="checkbox">
+							<span class="slider round"></span>
+							</label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Notification
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            <label class="switch pull-right">
+							<input type="checkbox">
+							<span class="slider round"></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Email Notification
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            <label class="switch pull-right">
+							<input type="checkbox">
+							<span class="slider round"></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Security Alert
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                            <label class="switch pull-right">
+							<input type="checkbox">
+							<span class="slider round"></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
-            
-          </div>
-        </div>
       </div>
       
     </div>
